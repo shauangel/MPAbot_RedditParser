@@ -1,0 +1,130 @@
+[
+  {
+    "link": "https://www.reddit.com/r/adventofcode/comments/k7ndux/2020_day_06_solutions/",
+    "question": {
+      "id": "k7ndux",
+      "title": "-\ud83c\udf84- 2020 Day 06 Solutions -\ud83c\udf84-",
+      "content": "## NEW AND NOTEWORTHY\n\n* /u/jeroenheijmans is back with the [Unofficial AoC 2020 Participant Survey](/k76nux)!\n* /u/maus80 is back with an [interactive scatterplot](/k6nb8b) of the global leaderboard!\n\n***\n\n## Advent of Code 2020: Gettin' Crafty With It\n\n+ **UNLOCKED!**  Go forth and create, you beautiful people!\n+ Full details and rules are in the [Submissions Megathread](/k4emxn)\n+ Make sure you use one of the two templates!\n * Or in the words of AoC 2016: USING A TEMPLATE IS MANDATORY\n\n***\n\n#--- Day 06: Custom Customs ---\n\n***\n\nPost your solution in this megathread.  Include what language(s) your solution uses!  If you need a refresher, the full posting rules are detailed in the wiki under [How Do The Daily Megathreads Work?](/r/adventofcode/wiki/index#wiki_how_do_the_daily_megathreads_work.3F).\n\n**Reminder:** Top-level posts in Solution Megathreads are for *solutions* only. If you have questions, please post your own thread and make sure to flair it with `Help`.\n\n***\n\n###~~This thread will be unlocked when there are a significant number of people on the global leaderboard with gold stars for today's puzzle.~~\n###*EDIT:* Global leaderboard gold cap reached at 00:04:35, megathread unlocked!",
+      "subreddit": {
+        "created_utc": 1449035429.0,
+        "subscribers": 120687
+      }
+    },
+    "answers": [
+      {
+        "id": "gesvzui",
+        "total_vote": 1,
+        "dialogue": "We're aware of some issues during unlock today; we'll let you know when we have more information.",
+        "author_comment_karma": 9186
+      },
+      {
+        "id": "ges7bz7",
+        "total_vote": 71,
+        "dialogue": "ruby 1/1 woo\n\n    p read.split(\"\\n\\n\").map{|x|x.split.join.chars.uniq.size}.sum\n    p read.split(\"\\n\\n\").map{|x|x.lines.map{|x|x.chomp.chars}.reduce(:&).size}.sum\n\nThat is just... amazing timing and amazing code. Kudos!\n\nAny reason you use `split` in the first one but `lines` in the second one?\n\nno lol, the first time my brain was like \"ok how do i kill all the whitespace\" and it spit out `.split.join` as a unit, then for part 2 i deleted everything in the braces to start again and the first thing that came to mind to transform the lines was `.lines.map`",
+        "author_comment_karma": 129
+      },
+      {
+        "id": "gesc8cy",
+        "total_vote": 31,
+        "dialogue": "# [Python](https://github.com/arknave/advent-of-code-2020/blob/main/day06/day06.py) / [C](https://raw.githubusercontent.com/arknave/advent-of-code-2020/main/day06/day06.c)\n\nLost a bit of time because of site issues and an off by one error, but I doubt I'm ever going to leaderboard on a string parsing problem when people are so fast these days.\n\nFirst time I've done the art the night of instead of the next day! I'm starting to learn the tiny ones are the hardest to tinker with because there's just no wiggle room.\n\n    #include <stdio.h>\n    #include <stdlib.h>\n    \n    // AOC DAY NUMBER //\n    int main(int c,char*\n    *v){int       t,p,q;\n    char           b[66]\n    ,h[    66],*k   ,*l=\n    b,*   e=h+26;for(p=q\n    =0   ;l;   ){for(k=h\n    ;k            <e;++k\n    )*    k=0;for   (t=0\n    ;(   l=gets(b   ))&&\n    *l   ;++t)for(  k=l;\n    *k;   ++k)++h   [-97\n    +*k];          for(k\n    =h;k<e;     ++k){p+=\n    *k>0;q+=*k==t;}}--c;\n    printf(\"%d\",c?q:p);}\n\n>`blocks = fin.read().split(\"\\n\\n\")`\n\nI've been writing a really awkward for loop that appended each line manually if it wasn't empty lol. Definitely going to use this method in the future :)",
+        "author_comment_karma": 853
+      },
+      {
+        "id": "ges6ld4",
+        "total_vote": 95,
+        "dialogue": "38/27, Python. https://github.com/sophiebits/adventofcode/blob/main/2020/day06.py\n\nServer problems during unlock again today? I had to refresh several times to get each page to load.\n\nI got 504 and couldn't see the page for more than 2 minutes.\n\nSame-- by the time my page loaded, 18 people had already finished part 1, judging from leaderboard times.\n\n(115/38-- at least part 2 loaded right away!)\n\nTook me a full five minutes before I could grab the inputs; 504s all along the way, and a bunch of people on IRC (names redacted) had trouble. Guess scores won't count today.\n\n\\[06:00:17\\] <> Down again?\n\n\\[06:00:22\\] <> rip\n\n\\[06:00:29\\] <> yep for me.\n\n\\[06:00:31\\] <> yeah just wondering if anyone else was having issues\n\n\\[06:01:15\\] <> cmon\n\n\\[06:01:35\\] <> lol\n\n\\[06:01:51\\] <> NOw I know what day 1 felt like for everyone else.\n\nEdit: Asked around the private leaderboards (North Europe); looks like \\~4 minutes to get the site to load was normal.\n\nI lost around a minute or so waiting for part 2 to load.\n\nI loaded the page fine for Part 1, but then I had to try several times (and got some 504s and page-hangs) to submit the answer. It was slow for Part 2 but a bit better.\n\nThe server wouldn't serve me either. I think the leaderboard for part 1 was done before the problem even loaded for me :(\n\n(I also wasted a minute due to using `s.splitlines()` instead of `s.split('\\n\\n')` to break my input into groups, but that one's on me.)\n\nI submitted my answer for Part 1 at 12:03, but it took several minutes to go through. My official time under stats is 7:12.\n\nOh; I wasn't the only one having issues! I was only held up for about ten seconds though, so I'm not particularly annoyed.\n\nyeah it was weird, my input changed for some reason too which threw me off\n\nYeah. I lost over a minute on both parts because of that",
+        "author_comment_karma": 535
+      },
+      {
+        "id": "gesc59h",
+        "total_vote": 34,
+        "dialogue": "[Haskell](https://github.com/SimonBaars/AdventOfCode-Haskell/blob/master/2020/Day6.hs)\n\nHaskell has proven to be insane yet again. It's so short! Part 1:\n\n    sum $ map (length . foldr1 union) input\n\nPart 2:\n\n    sum $ map (length . foldr1 intersect) input\n\nthat's so insanely short! I'm not even using any exotic imports (nothing except Data.List).\n\nYou can even (naturally) golf this a tad further!  The Monoid for Set (how to get one from two) is union.  So <> would be union, and mconcat is the <> of all items in a foldable container.  So part 1 can be:\n\n    sum . map (size . mconcat)\n\nthis is pretty crazy\n\nAhhh, foldr1 intersect is a much nicer solution than mine (which involved sorting, grouping, and then filtering out the grouped characters that were shorter than the total number of people in a boarding group), thanks for sharing! I'm gonna remember union and intersect next time\n\nBut how did you parse the input into the nice input list? I used so much time work that out",
+        "author_comment_karma": 448
+      },
+      {
+        "id": "ges8u7n",
+        "total_vote": 11,
+        "dialogue": "Python; would have made some work of the leaderboards today if the servers didn't crash again, and it took five minutes to get past all the 504s (and all of a sudden being logged out).\n\n    groups = data.split('\\n\\n')\n\n    # Part one\n    sum(len(set.union(*map(set, g.split('\\n')))) for g in groups)\n\n    # Part two\n    sum(len(set.intersection(*map(set, g.split('\\n')))) for g in groups)\n\ngoddamn.\nthat's incredibly tiny",
+        "author_comment_karma": 33973
+      },
+      {
+        "id": "gesb5jw",
+        "total_vote": 18,
+        "dialogue": "**Raku**\n\n    my @answers = 'input'.IO.slurp.split(\"\\n\\n\");\n\n    put [+] @answers.map: { .words.join.comb.Set }\n    put [+] @answers.map: { [\u2229] .words.map(*.comb.Set) }\n\nPart 1 could have been written `[+] @answers.map: { .comb(/\\S/).Set }` but I have a habit of avoiding RegEx unless necessary.\n\nAlso, doing the plus reduction `[+]` is the same number of characters as `sum`... I guess I just felt a little _reductionist_ today.\n\n*desire to learn Raku intensifies...*\n\nI imagine if you're quick at figuring out how to solve a puzzle, the ease at which Raku lets you concisely express it might give you a speed advantage.\n\nFor most problems in general, I just find it easier to figure out a solution in Raku than any other language.",
+        "author_comment_karma": 1693
+      },
+      {
+        "id": "ges6nvc",
+        "total_vote": 9,
+        "dialogue": "Ruby 9/31\n\nMy input downloader failed so I had to manually open the input text in browser to copy into file lmao\n\n\n    a=$<.read.split(\"\\n\\n\")\n    p a.sum{|x|\n    # x.split.join.chars.uniq.size <- part 1\n    x.lines.map{|x|x.chomp.chars}.reduce{|x,y|x&y}.size\n    }",
+        "author_comment_karma": 2076
+      },
+      {
+        "id": "gesb3z0",
+        "total_vote": 14,
+        "dialogue": "J, both parts\n\n    echo ((1 #. #@~.@;;._2) , (1 #. ([: #@; ([-.-.)&.>/);._2)) <;._2 d\n\nhttp://urstoron.com/4COP\n\n[deleted]\n\n`[-.-.` is interesting for intersection! the one i came up with is `e.#[` (nb `]` would give length error in insert. edit: now that i actually think about why, for obvious reasons lol)\n\n`e.#[` is nice.  I can't take credit for `[-.-.` \\-- that's actually a [standard J idiom](https://code.jsoftware.com/wiki/Vocabulary/minusdot#dyadic).",
+        "author_comment_karma": 597
+      },
+      {
+        "id": "getqcuj",
+        "total_vote": 16,
+        "dialogue": "**Raku, Parts 1 & 2**\n\nTrying to do all my solutions in functional Raku. I like the middle ground here between readability and conciseness.\n\n    sub part-one($group) {\n        (set $group.subst(\"\\n\", '', :g).comb).elems;\n    }\n    \n    sub part-two($group) {\n        [\u2229] $group.split(\"\\n\").map(-> $entry { set $entry.comb });\n    }\n    \n    sub MAIN($file, Bool :$p2 = False) {\n        say [+] $file.IO.lines(:nl-in(\"\\n\\n\")).map($p2 ?? &part-two !! &part-one);\n    }\n\nNice use of `:nl-in`, I'd never have thought of that.\n\nYou can make `part-two` even more concise like this:\n\n        [\u2229] $group.lines.map(*.comb.Set);\n\nThanks! [Saw it suggested](https://reddit.com/r/rakulang/comments/k6xhrm/does_raku_have_a_paragraphatatime_mode/) on /r/rakulang yesterday and it fit in nicely with today\u2019s challenge\n\nThanks for the tip! I didn\u2019t know about `.lines` on a string, but that makes sense. That\u2019s much more readable overall too!",
+        "author_comment_karma": 1098
+      },
+      {
+        "id": "gesu64i",
+        "total_vote": 6,
+        "dialogue": "**Vim keystokes** \u2014 the first line, combining the paragraphs, is [copied from day 4](https://www.reddit.com/r/adventofcode/comments/k6e8sw/2020_day_04_solutions/geklpot/?utm_source=reddit&utm_medium=web2x&context=3) but with an added `!` at the end:\n\n    :g/^/ ,/\\v^$|%$/j!\u27e8Enter\u27e9\n    :%s/\\v(.)(.*\\1)@=//g\u27e8Enter\u27e9\n    :%j!\u27e8Enter\u27e9\n    g\u27e8Ctrl+G\u27e9\n\nYour part\u00a01 answer is displayed as \u2018Col 1 of <num>\u2019.\n\nHaving got each group on to a single line, the `:%s///` removes any character which also appears later in the line, so we have each question letter just once per group of passengers.\n\nThen the total we want is the number of letters remaining in the file. `:%j!` joins them all into a single line, and `g\u27e8Ctrl+G\u27e9` tells us (among other things) how many columns are in that line.\n\nYes, there are ways of getting that count into the buffer, but it spoils the simplicity of this and I didn't see the need \u2014 we have the answer on the screen, available for typing it into the website.",
+        "author_comment_karma": 2166
+      },
+      {
+        "id": "geubpsp",
+        "total_vote": 10,
+        "dialogue": "Raku\n\n    sub rv (&code) { 'input'.IO.slurp.split(\"\\n\\n\", :skip-empty).map(&code).sum }\n    say \"One: \" ~ rv { .comb(/\\S/).Set.elems };\n    say \"Two: \" ~ rv { .lines.map({ .comb(/\\S/).Set }).reduce(&infix:<\u2229>).elems };\n\n>cggoebel\n\nThe [blog post](https://ergoletterbag.blogspot.com/2020/12/raku-advent-of-code-2020-day-6.html) which details my original solution and how I refactored it into this three line solution. FWIW: I'm using Advent of Code to learn Raku. The [Raku AoC Repo](https://github.com/codesections/advent-of-raku-2020) has been a tremendous help in providing examples of code and style.",
+        "author_comment_karma": 69
+      },
+      {
+        "id": "ges7hl5",
+        "total_vote": 8,
+        "dialogue": "Placed 112/69. Python. Video of me solving at [https://youtu.be/e\\_66g1QcVlE](https://youtu.be/e_66g1QcVlE). [Code](https://topaz.github.io/paste/#XQAAAQB2AwAAAAAAAAA0m0pnuFI8c9WAoVc3IiG2khdS9RZHDy1KRQQmBUCL0xNYUHRS0RIX9qrRq01NX2n+Fwtz65btvRqlGNXvpLApfwKi0UaioHt1qJsc6HZDwlPbNt0y24RrXT4uaOTwfNM7PfP3TvD+7GNnTxP9mporexjG40EYBSJO60heY+wL90h2nC0DAQJKnmlDg1Da9XeZkO2CINCGkEQzEpraC7kxDO22iSKi7uPG5zsRzsM/tf+3lsQvqY2BeueWkS3ZNFVcPug999J3O8usKriiT0qiXiVC8UFXmXHJ3ifDEpflUWZu0fFSJRsjSQRbwUaGTQrpk20PGf0r+UCjemyin8VMjKS2MAThhnS6Vemo+AhM3uO4WqSzcRJhJID0nesHKtKazbV7eLE/DJZtfTM6Y4mncX8n405H+plbwCPsVcZxcCAkKbaxFMd+ezSq01ctXqck/jLL7A3u3VHURdVkPCWCILkx6idvFdbeGqqsgDj/+p7KbA==)\n\nThat deep exhale when you finally finished is my mood for 2020.\n\nGreat job, and I love the videos. Thanks for putting them up for others to watch.",
+        "author_comment_karma": 2064
+      },
+      {
+        "id": "ges8oht",
+        "total_vote": 17,
+        "dialogue": "#[Go/Golang](https://github.com/mnml/aoc/blob/master/2020/06/2.go) 990/1589\nI love maps.\n\n**1225/495** with [the same code less a loop](https://github.com/kindermoumoute/adventofcode/blob/master/2020/day6/main.go)\n\nEDIT: feel free to join the golang leaderboard ==> 235071-2acde629\n\nEDIT2: oh nvm you are already on it, hi mnml :-)\n\nNice!\n\n>less a loop\n\nNice! I feel silly for missing that.\n\n>feel free to join the golang leaderboard :-) ==> 235071-2acde629\n\nIs that reusing-code's leaderboard? If so, I've been on it since last year as mnml (currently first place!)\n\nIm joining the go lang leaderboard. I mean, someone needs to be in the bottom rank.",
+        "author_comment_karma": 408
+      },
+      {
+        "id": "gesqren",
+        "total_vote": 10,
+        "dialogue": "**Python**\n\nExact same function for both parts, just changing union to intersection!\n\n    data = [list(map(set, group.splitlines())) for group in raw.split('\\n\\n')]\n    \n    def combine_with(func):\n        return sum(len(reduce(func, group)) for group in data)  # functools.reduce\n    \n    def part_one():\n        return combine_with(set.union)\n    \n    def part_two():\n        return combine_with(set.intersection)\n\nI love the purity / power of your parsing !\n\nMaybe you already know this, but TIL \\`set.union\\` and \\`set.intersection\\` can take multiple arguments, so you don't even need \\`functools.reduce\\` and can just use \\`func(\\*group)\\` in your \\`combine\\_with\\`",
+        "author_comment_karma": 2224
+      },
+      {
+        "id": "getcuvx",
+        "total_vote": 6,
+        "dialogue": "I love how easy **Raku** makes this:\n\n    sub MAIN(IO() $inputfile where *.f = 'aoc06.input', Bool :v(:$verbose) = False)\n    {\n        my @groups = $inputfile.slurp.split(/\\n\\s*\\n/);\n    \n        my $totalCount = @groups.map(*.comb(/<[a..z]>/).unique.elems).sum;\n        say $verbose ?? 'Part one: the sum of the counts is: ' !! '',\n            $totalCount;\n    \n        my $totalCount2 = @groups.map(-> $g { $g.comb(/<[a..z]>/).Bag.grep(*.value == $g.lines).elems }).sum;\n        say $verbose ?? 'Part two: the sum of the counts is: ' !! '',\n            $totalCount2;\n    }\n\n[https://github.com/mscha/aoc/blob/master/aoc2020/aoc06](https://github.com/mscha/aoc/blob/master/aoc2020/aoc06)",
+        "author_comment_karma": 277
+      },
+      {
+        "id": "getqxwh",
+        "total_vote": 9,
+        "dialogue": "# Python\n\nAnother horrible (lovely) set of one line solutions  \n\n\n    # Part 1\n    total = sum([len(set(\"\".join(group.split(\"\\n\")))) for group in open(\"input.txt\").read().split(\"\\n\\n\")])\n    print(f\"[P1] Sum of counts: {total}\")\n    \n    \n    # Part 2\n    total = sum([len(set.intersection(*[set(sub) for sub in group.split(\"\\n\")])) for group in open(\"input.txt\").read().split(\"\\n\\n\")])\n    print(f\"[P2] Sum of counts: {total}\")\n\nTIL set.intersection() \n\nConsider using group.replace('\\n', '') instead of the join/split combo.",
+        "author_comment_karma": 1677
+      },
+      {
+        "id": "getwy36",
+        "total_vote": 6,
+        "dialogue": "My answer for both in Python:\n\n    text = open(\"/Users/ieaston/advent6_input.txt\", \"r\").read().strip()\n    sets = [[set(member) for member in group.split('\\n')] for group in text.split('\\n\\n')]\n    print(sum([len(set.union(*l)) for l in sets]))\n    print(sum([len(set.intersection(*l)) for l in sets]))",
+        "author_comment_karma": 152
+      },
+      {
+        "id": "geuwhh9",
+        "total_vote": 6,
+        "dialogue": "**Python 3** short oneliners\n\nPart 1:\n\n    with open(\"input6.txt\") as f:\n        l = f.read().split(\"\\n\\n\")\n    sum(len(set.union(*(set(x) for x in group.splitlines()))) for group in l)\n\nPart 2:\n\n    sum(len(set.intersection(*(set(x) for x in group.splitlines()))) for group in l)",
+        "author_comment_karma": 12235
+      }
+    ]
+  }
+]
